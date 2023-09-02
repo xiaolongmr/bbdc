@@ -65,7 +65,7 @@ bbdcRouter.get('/bbdc', async (req, res) => {
         totalLearn += learnList[i].learnNum
         totalReview += learnList[i].reviewNum
     }
-    res.header("Content-Type", "image/svg+xml",)
+    res.header("Content-Type", "text/html",)
     res.send(render(COLORS, handleTheme(COLORS, theme), { totalDuration, totalLearn, totalReview, nickname: nickname === undefined ? 'leftover' : nickname, hide_border, title_color, text_color }))
 })
 module.exports = bbdcRouter
