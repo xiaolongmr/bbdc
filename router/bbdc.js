@@ -32,10 +32,10 @@ function render(COLORS, theme, data) {
 .card {
     width: 382px;
     height: 190px;
-    border: 1px solid #000; /* Add your border styles here */
+    border: 1px solid #000; 
     display: flex;
-    align-items: center; /* Vertical center alignment */
-    justify-content: center; /* Horizontal center alignment */
+    align-items: center;
+    justify-content: center; 
 }
 .content {
     padding: 10px;
