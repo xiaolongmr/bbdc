@@ -28,21 +28,22 @@ function render(COLORS, theme, data) {
     renderColor[theme].TEXT = handleColorField('text_color', 'TEXT')
 
     return `
-<div class="webinfo">
- <!-- <div class="title">${data.nickname}'s不背单词仪表盘</div> -->
-  <div class="webinfo-item">
-    <div class="item-name">今日学习</div>
-    <div class="item-count">${data.totalLearn} words</div>
-  </div>
-  <div class="webinfo-item">
-    <div class="item-name">今日复习</div>
-    <div class="item-count">${data.totalReview} words</div>
-  </div>
-  <div class="webinfo-item">
-    <div class="item-name">今日学习时长</div>
-    <div class="item-count">${data.totalDuration} mins</div>
-  </div>
-</div>
+function yan(){document.write('<div class="webinfo">
+<!-- <div class="title">${data.nickname}'s不背单词仪表盘</div> -->
+ <div class="webinfo-item">
+   <div class="item-name">今日学习</div>
+   <div class="item-count">${data.totalLearn} words</div>
+ </div>
+ <div class="webinfo-item">
+   <div class="item-name">今日复习</div>
+   <div class="item-count">${data.totalReview} words</div>
+ </div>
+ <div class="webinfo-item">
+   <div class="item-name">今日学习时长</div>
+   <div class="item-count">${data.totalDuration} mins</div>
+ </div>
+</div>');}
+
 `
 }
 
