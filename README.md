@@ -2,6 +2,12 @@
 
 基于`left0ver`大佬开源项目[github-bbdc-stat](https://github.com/left0ver/github-bbdc-stat)修改的hexo，侧边栏不背单词仪表盘
 
+## 效果展示
+
+左右分别为hexo昼夜模式效果，使用的样式为hexo-butterfly主题自带的**网站资讯**模块的样式，butterfly主题不用引入其他样式
+
+![](hexo-bbdc.jpg)
+
 ## 使用方法
 
 在 `blog` >  `source` > `_data` > `widget.yml `添加内容，下面示例
