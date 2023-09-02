@@ -10,9 +10,9 @@
 
 ## 使用方法
 
-在 `blog` >  `source` > `_data` > `widget.yml `添加内容，下面示例
+在 `blog` >  `source` > `_data` > `widget.yml ` 添加内容，下面示例:
 
-把 **userID** 改成自己的
+把 **userID** 改成自己的, 因为使用主题自带的**网站资讯**样式所以 class_name 添加 card-webinfo
 
 > userId是你的不背单词的ID,**查看方法：进入不背单词app首页，点击左上角的头像，再点击右上角的设置，往下拉到最底下即可看到你的ID(必填)**
 
