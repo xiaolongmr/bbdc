@@ -28,19 +28,19 @@ function render(COLORS, theme, data) {
     renderColor[theme].TEXT = handleColorField('text_color', 'TEXT')
 
     return `
-<div class="webinfo">
+<div class="bbdc-word">
   <div class="title">${data.nickname}'s不背单词仪表盘</div>
-  <div class="webinfo-item">
-    <div class="item-name">今日学习</div>
-    <div class="item-count">${data.totalLearn} words</div>
+  <div class="bbdc-item">
+    <div class="text">今日学习</div>
+    <div class="value">${data.totalLearn} words</div>
   </div>
-  <div class="webinfo-item">
-    <div class="item-name">今日复习</div>
-    <div class="item-count">${data.totalReview} words</div>
+  <div class="bbdc-item">
+    <div class="text">今日复习</div>
+    <div class="value">${data.totalReview} words</div>
   </div>
-  <div class="webinfo-item">
-    <div class="item-name">今日学习时长</div>
-    <div class="item-count">${data.totalDuration} mins</div>
+  <div class="bbdc-item">
+    <div class="text">今日学习时长</div>
+    <div class="value">${data.totalDuration} mins</div>
   </div>
 </div>
 `
