@@ -28,32 +28,6 @@ function render(COLORS, theme, data) {
     renderColor[theme].TEXT = handleColorField('text_color', 'TEXT')
 
     return `
-<style>
-.card {
-    width: 382px;
-    height: 190px;
-    border: 1px solid #000; 
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-}
-.content {
-    padding: 10px;
-    font-family: 'Segoe UI', sans-serif;
-}
-.title {
-    font-size: 19px;
-    font-weight: 600;
-}
-.text {
-    font-size: 15px;
-    font-weight: 600;
-}
-.value {
-    font-size: 13px;
-    font-weight: 600;
-}
-</style>
 <div class="card">
     <div class="content">
         <p class="title">${data.nickname}'s不背单词仪表盘</p>
