@@ -28,34 +28,43 @@ function render(COLORS, theme, data) {
     renderColor[theme].TEXT = handleColorField('text_color', 'TEXT')
 
     return `
-<svg 
-version="1.1"
-baseProfile="full"
-width="382" height="190"
-xmlns="http://www.w3.org/2000/svg"
-viewBox="0 0 382 190"
-transform="translate(8,6)"
->
-<defs>
-    <filter id="Card" x="0" y="0" width="382" height="190" filterUnits="userSpaceOnUse">
-    <feOffset dy="3" input="SourceAlpha"/>
-    <feGaussianBlur stdDeviation="3" result="blur"/>
-    <feFlood flood-opacity="0.161"/>
-    <feComposite operator="in" in2="blur"/>
-    <feComposite in="SourceGraphic"/>
-    </filter>
-</defs>   
-<g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Card)" stroke="${renderColor[theme].BORDER}">
-<rect width="364" height="172" fill="${renderColor[theme].BACKGROUND}"  rx="10" ry="10"/>
-</g>
- <text x="97"  y="44"  fill="${renderColor[theme].TITLE}" font-size="19" font-weight="600" font-family="SegoeUI, Segoe UI">${data.nickname}'s不背单词仪表盘</text>
- <text x="10"  y="90"  fill="${renderColor[theme].TEXT}"  font-size="15" font-weight="600" font-family="SegoeUI, Segoe UI">今日学习</text>
- <text x="19"  y="130" fill="${renderColor[theme].TEXT}"  font-size="13" font-weight="600" font-family="SegoeUI, Segoe UI">${data.totalLearn} words</text>
- <text x="120" y="90"  fill="${renderColor[theme].TEXT}"  font-size="15" font-weight="600" font-family="SegoeUI, Segoe UI">今日复习</text>
- <text x="135" y="130" fill="${renderColor[theme].TEXT}"  font-size="13" font-weight="600" font-family="SegoeUI, Segoe UI">${data.totalReview} words</text>
- <text x="235" y="90"  fill="${renderColor[theme].TEXT}"  font-size="15" font-weight="600" font-family="SegoeUI, Segoe UI">今日学习时长</text>
- <text x="260" y="130" fill="${renderColor[theme].TEXT}"  font-size="13" font-weight="600" font-family="SegoeUI, Segoe UI">${data.totalDuration} mins</text>
-</svg>
+<style>
+.card {
+    width: 382px;
+    height: 190px;
+    border: 1px solid #000; /* Add your border styles here */
+    display: flex;
+    align-items: center; /* Vertical center alignment */
+    justify-content: center; /* Horizontal center alignment */
+}
+.content {
+    padding: 10px;
+    font-family: 'Segoe UI', sans-serif;
+}
+.title {
+    font-size: 19px;
+    font-weight: 600;
+}
+.text {
+    font-size: 15px;
+    font-weight: 600;
+}
+.value {
+    font-size: 13px;
+    font-weight: 600;
+}
+</style>
+<div class="card">
+    <div class="content">
+        <p class="title">${data.nickname}'s不背单词仪表盘</p>
+        <p class="text">今日学习</p>
+        <p class="value">${data.totalLearn} words</p>
+        <p class="text">今日复习</p>
+        <p class="value">${data.totalReview} words</p>
+        <p class="text">今日学习时长</p>
+        <p class="value">${data.totalDuration} mins</p>
+    </div>
+</div>
 `
 }
 
