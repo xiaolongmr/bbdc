@@ -26,7 +26,7 @@ top:
     id_name:
     name: 不背单词仪表盘
     icon: fas fa-chart-line
-    html: '<script type="text/javascript"src="https://bbdc.good.gq/bbdc?userId=32822769"></script><script> bbdc() </script>'
+    html: '<script type="text/javascript"src="https://bbdc.good.gq/bbdc?userId=32822769"></script>'
 
 bottom:
   # - class_name:
