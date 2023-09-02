@@ -29,7 +29,7 @@ function render(COLORS, theme, data) {
 
     return `
 <div class="webinfo">
-//   <div class="title">${data.nickname}'s不背单词仪表盘</div>
+ <!-- <div class="title">${data.nickname}'s不背单词仪表盘</div> -->
   <div class="webinfo-item">
     <div class="item-name">今日学习</div>
     <div class="item-count">${data.totalLearn} words</div>
