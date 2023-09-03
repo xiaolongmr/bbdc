@@ -1,6 +1,5 @@
 const express = require('express');
 const bbdcRouter = require('./router/bbdc')
-const bbdcRouter = require('./router/hexobbdc')
 const { Error404 } = require('./error_pages')
 const app = express();
 app.use(bbdcRouter)
