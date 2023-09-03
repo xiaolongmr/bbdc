@@ -27,7 +27,7 @@ function render(COLORS, theme, data) {
     renderColor[theme].TITLE = handleColorField('title_color', 'TITLE')
     renderColor[theme].TEXT = handleColorField('text_color', 'TEXT')
 
-    return `var webinfoContainer=document.createElement('div');webinfoContainer.className='webinfo';var todayStudy=document.createElement('div');todayStudy.className='webinfo-item';todayStudy.innerHTML='<div class="item-name">今日学习：</div><div class="item-count">${data.totalLearn} words</div>';var todayReview=document.createElement('div');todayReview.className='webinfo-item';todayReview.innerHTML='<div class="item-name">今日复习：</div><div class="item-count">${data.totalReview} words</div>';var studyDuration=document.createElement('div');studyDuration.className='webinfo-item';studyDuration.innerHTML='<div class="item-name">学习时长：</div><div class="item-count">${data.totalDuration} mins</div>';webinfoContainer.appendChild(todayStudy);webinfoContainer.appendChild(todayReview);webinfoContainer.appendChild(studyDuration);var sidebar=document.getElementsByClassName('item-content');var sidebar=document.querySelector('.item-content');if(sidebar){sidebar.appendChild(webinfoContainer)}
+    return `var webinfoContainer=document.createElement('div');webinfoContainer.className='webinfo';var todayStudy=document.createElement('div');todayStudy.className='webinfo-item';todayStudy.innerHTML='<div class="item-name">本周学习：</div><div class="item-count">${data.totalLearn} words</div>';var todayReview=document.createElement('div');todayReview.className='webinfo-item';todayReview.innerHTML='<div class="item-name">本周复习：</div><div class="item-count">${data.totalReview} words</div>';var studyDuration=document.createElement('div');studyDuration.className='webinfo-item';studyDuration.innerHTML='<div class="item-name">学习时长：</div><div class="item-count">${data.totalDuration} mins</div>';webinfoContainer.appendChild(todayStudy);webinfoContainer.appendChild(todayReview);webinfoContainer.appendChild(studyDuration);var sidebar=document.getElementsByClassName('item-content');var sidebar=document.querySelector('.item-content');if(sidebar){sidebar.appendChild(webinfoContainer)}
 `
 }
 
@@ -56,6 +56,6 @@ bbdcRouter.get('/bbdc', async (req, res) => {
     }
     // res.header("Content-Type", "text/html",)
     res.header("Content-Type", "application/javascript",)
-    res.send(render(COLORS, handleTheme(COLORS, theme), { totalDuration, totalLearn, totalReview, nickname: nickname === undefined ? 'leftover' : nickname, hide_border, title_color, text_color }))
+    res.send(render(COLORS, handleTheme(COLORS, theme), { totalDuration, totalLearn, totalReview, nickname: nickname === undefined ? '星河城野' : nickname, hide_border, title_color, text_color }))
 })
 module.exports = bbdcRouter
