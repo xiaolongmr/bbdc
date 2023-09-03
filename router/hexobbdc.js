@@ -5,7 +5,7 @@ const isHexColor = require('../utils/isHexColor')
 const baseURL = require('../baseURL')
 const COLORS = require('../theme')
 const { Error400 } = require('../error_pages')
-const bbdcRouter = express.Router();
+const hexobbdcRouter = express.Router();
 
 function handleTheme(COLORS, theme) {
     // 没有主题或者主题不存在
@@ -27,11 +27,10 @@ function render(COLORS, theme, data) {
     renderColor[theme].TITLE = handleColorField('title_color', 'TITLE')
     renderColor[theme].TEXT = handleColorField('text_color', 'TEXT')
 
-    return `<style>.card{width:382px;height:190px;border:1px solid#000;display:flex;align-items:center;justify-content:center}.content{padding:10px;font-family:'Segoe UI',sans-serif}.title{font-size:19px;font-weight:600}.text{font-size:15px;font-weight:600}.value{font-size:13px;font-weight:600}</style><div class="card"><div class="content"><p class="title">${data.nickname}'s不背单词仪表盘</p><p class="text">今日学习</p><p class="value">${data.totalLearn}words</p><p class="text">今日复习</p><p class="value">${data.totalReview}words</p><p class="text">今日学习时长</p><p class="value">${data.totalDuration}mins</p></div></div>
-`
+    return `<style>.card{width:382px;height:190px;border:1px solid#000;display:flex;align-items:center;justify-content:center}.content{padding:10px;font-family:'Segoe UI',sans-serif}.title{font-size:19px;font-weight:600}.text{font-size:15px;font-weight:600}.value{font-size:13px;font-weight:600}</style><div class="card"><div class="content"><p class="title">${data.nickname}'s不背单词仪表盘</p><p class="text">今日学习</p><p class="value">${data.totalLearn}words</p><p class="text">今日复习</p><p class="value">${data.totalReview}words</p><p class="text">今日学习时长</p><p class="value">${data.totalDuration}mins</p></div></div>`
 }
 
-bbdcRouter.get('/bbdc', async (req, res) => {
+hexobbdcRouter.get('/hexobbdc', async (req, res) => {
     const { userId, theme, nickname, hide_border, title_color, text_color } = req.query
     // 如果没有userId，返回404
     if (userId === undefined) {
@@ -58,4 +57,4 @@ bbdcRouter.get('/bbdc', async (req, res) => {
     res.header("Content-Type", "application/javascript",)
     res.send(render(COLORS, handleTheme(COLORS, theme), { totalDuration, totalLearn, totalReview, nickname: nickname === undefined ? '星河城野' : nickname, hide_border, title_color, text_color }))
 })
-module.exports = bbdcRouter
+module.exports = hexobbdcRouter
